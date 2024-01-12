@@ -1,0 +1,90 @@
+import {useRef} from 'react';
+import styles from '../../styles';
+import {
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+} from 'react-native';
+import {WebView} from 'react-native-webview';
+
+const Test: JSX.Element = ({navigation}) => {
+  function onMessage(data) {
+    alert('d' + data.nativeEvent.data);
+  }
+  //const webviewRef = useRef();
+
+  const sendDataToWebView = () => {
+    this.webref.injectJavaScript("alert('message.data');");
+    //  webviewRef.injectJavaScript(`alert('message.data');`);
+  };
+
+  return (
+    <View style={styles.screen}>
+      <View style={{alignItems: 'center'}}>
+        <TouchableOpacity
+          onPress={() => sendDataToWebView()}
+          style={{
+            padding: 20,
+            width: 300,
+            marginTop: 100,
+            backgroundColor: '#6751ff',
+            alignItems: 'center',
+          }}>
+          <Text style={{fontSize: 20, color: 'white'}}>
+            Send Data To WebView / Website
+          </Text>
+        </TouchableOpacity>
+      </View>
+      <WebView
+        style={styles.web}
+        ref={r => (this.webref = r)}
+        scalesPageToFit={false}
+        mixedContentMode="compatibility"
+        onMessage={onMessage}
+        source={{
+          html: `
+          <html>
+          <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+          </head>
+          <body
+            style="
+              display: flex;
+              justify-content: center;
+              flex-direction: column;
+              align-items: center;
+            "
+          >
+            <button
+            onclick="sendDataToReactNativeApp()"
+              style="
+                padding: 20;
+                width: 200;
+                font-size: 20;
+                color: white;
+                background-color: #6751ff;
+              "
+            >
+              Send Data To React Native App
+            </button>
+            <script>
+              const sendDataToReactNativeApp = async () => {
+                window.ReactNativeWebView.postMessage('TITS');
+                alert(message);
+              };
+              window.addEventListener("message", message => {
+                alert('message.data');
+              });
+            </script>
+          </body>
+        </html>
+`,
+        }}
+      />
+    </View>
+  );
+};
+
+export default Test;
