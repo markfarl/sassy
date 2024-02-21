@@ -12,10 +12,11 @@ const Button = ({custom = null, onPress, children}) => {
 
   return (
     <TouchableHighlight {...touchProps}>
-      <Text style={[styles.textCenter, styles.textButton, custom]}>{children}</Text>
+      <Text style={[styles.textCenter, styles.textButton, custom]}>
+        {children}
+      </Text>
     </TouchableHighlight>
   );
 };
-
 
 export default Button;

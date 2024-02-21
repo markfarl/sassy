@@ -4,7 +4,6 @@ import styles from '../../styles';
 import {View, Text, ScrollView} from 'react-native';
 
 const Home = ({navigation}) => {
-
   const setup = () => {
     navigation.navigate('SetupGA');
   };
@@ -14,24 +13,24 @@ const Home = ({navigation}) => {
 
   return (
     <View style={styles.screen}>
-       <ScrollView
+      <ScrollView
         style={styles.scrollBox}
-        contentContainerStyle={styles.scrollBoxContainer}>  
+        contentContainerStyle={styles.scrollBoxContainer}>
         <HeaderText>Help Topics</HeaderText>
         <View style={styles.innerBox}>
-          
           <View style={styles.buttonFormBox}>
             <Button custom={styles.wide} onPress={setup}>
               Setting up Sassy
             </Button>
-          </View><View style={styles.buttonFormBox}>
+          </View>
+          <View style={styles.buttonFormBox}>
             <Button custom={styles.wide} onPress={setup}>
               Setting up Google Analytics
             </Button>
           </View>
           <View style={styles.buttonFormBox}>
             <Button custom={styles.wide} onPress={view}>
-              How to view Analytics 
+              How to view Analytics
             </Button>
           </View>
           <View style={styles.buttonFormBox}>

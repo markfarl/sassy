@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import {IMAGE_FACE, FACE_NAME} from '../constants';
 
-const FacePreview= ({index, faces}: any) => {
+const FacePreview = ({index, faces}: any) => {
   const adjusted = FACE_NAME[faces - 2][index];
   const faceIndex = faces - 2;
   return (

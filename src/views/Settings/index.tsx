@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import {useConfig, saveConfig} from '../../contexts/configContext';
 import Button from '../../components/Button';
 import HeaderText from '../../components/HeaderText';
@@ -26,7 +26,7 @@ const Settings = ({navigation}: any) => {
       <ScrollView
         style={styles.scrollBox}
         contentContainerStyle={styles.scrollBoxContainer}>
-        <View style={styles.innerBox}>   
+        <View style={styles.innerBox}>
           <SettingGAID>Google Analytics MeasurmentId:</SettingGAID>
           <SettingFaces>Feedback faces: ( 2-5 )</SettingFaces>
           <View style={styles.infoBox}>
@@ -37,7 +37,9 @@ const Settings = ({navigation}: any) => {
               })}
             </View>
           </View>
-          <SettingLockCode setLockShowParent={setShowNav}>Set Lock Code:</SettingLockCode>
+          <SettingLockCode setLockShowParent={setShowNav}>
+            Set Lock Code:
+          </SettingLockCode>
           <Text style={[styles.text, styles.marginTop]}>Feedback Text:</Text>
           <TextInput
             name="gaId"

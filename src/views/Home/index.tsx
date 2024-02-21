@@ -24,11 +24,11 @@ const Home = ({navigation}) => {
   return (
     <View style={styles.screen}>
       <View style={styles.box}>
-      <Image
-                  style={styles.logoImage}
-                  source={require('../../assets/logo.png')}   
-              />
-              <Text style={styles.subHeader} >Satisfaction Feedback App.</Text>
+        <Image
+          style={styles.logoImage}
+          source={require('../../assets/logo.png')}
+        />
+        <Text style={styles.subHeader}>Satisfaction Feedback App.</Text>
         <View style={styles.innerBox}>
           {config.setupComplete ? (
             <>

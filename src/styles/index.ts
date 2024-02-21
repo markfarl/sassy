@@ -13,6 +13,11 @@ const styles = StyleSheet.create({
     paddingTop: 25,
     paddingLeft: 25,
   },
+  playFooter: {
+    height: '10%',
+    width: '99%',
+    alignItems: 'flex-end',
+  },
   playFacesContainer: {
     flexDirection: 'row',
     height: '70%',
@@ -35,6 +40,8 @@ const styles = StyleSheet.create({
   screen: {
     flexDirection: 'column',
     alignItems: 'center',
+    top: 0,
+    left: 0,
     width: '100%',
     height: '100%',
     backgroundColor: mainBkGrd,
@@ -147,6 +154,16 @@ const styles = StyleSheet.create({
     marginTop: 20,
     alignItems: 'center',
   },
+  lockCodeContainOverlay: {
+    flexDirection: 'column',
+    alignItems: 'center',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    paddingTop: 10,
+    backgroundColor: mainBkGrd,
+  },
   lockCodeNumber: {
     flex: 1,
     borderColor: borderColor,
@@ -161,7 +178,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
   },
   lockCodeText: {
-    color: '#fff',
+    color: fontColor,
     fontSize: 46,
   },
   long: {
@@ -197,12 +214,12 @@ const styles = StyleSheet.create({
   helpImage: {
     width: null,
     maxHeight: 350,
-    resizeMode: 'contain'
+    resizeMode: 'contain',
   },
   logoImage: {
     width: '90%',
     maxHeight: 150,
-    resizeMode: 'contain'
+    resizeMode: 'contain',
   },
   greyBkgrd: {
     backgroundColor: '#eee',
@@ -211,7 +228,7 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontWeight: '600',
     marginBottom: 50,
-  }
+  },
 });
 
 export default styles;
