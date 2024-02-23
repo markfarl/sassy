@@ -227,7 +227,12 @@ const styles = StyleSheet.create({
   subHeader: {
     fontSize: 22,
     fontWeight: '600',
-    marginBottom: 50,
+    marginBottom: 20,
+  },
+  subSubHeader: {
+    fontSize: 18,
+    fontWeight: '600',
+    marginBottom: 30,
   },
 });
 

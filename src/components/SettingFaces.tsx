@@ -4,8 +4,8 @@ import styles from '../styles';
 import {Text, View} from 'react-native';
 import {Slider} from '@react-native-assets/slider';
 
-const SettingFaces = ({children}) => {
-  const {config, setConfig} = useConfig();
+const SettingFaces = ({children}: any) => {
+  const {config, setConfig}: any = useConfig();
 
   return (
     <View>

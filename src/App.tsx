@@ -10,6 +10,7 @@ import SetupFaces from './views/Setup/faces';
 import SetupLockCode from './views/Setup/lockcode';
 import Start from './views/Start';
 import SetupGA from './views/Help/setupGA';
+import setupSassy from './views/Help/setupSassy';
 import UseGA from './views/Help/useGA';
 
 const Stack = createNativeStackNavigator();
@@ -30,6 +31,7 @@ const App = () => {
           <Stack.Screen name="SetupFaces" component={SetupFaces} />
           <Stack.Screen name="SetupLockCode" component={SetupLockCode} />
           <Stack.Screen name="SetupGA" component={SetupGA} />
+          <Stack.Screen name="setupSassy" component={setupSassy} />
           <Stack.Screen name="UseGA" component={UseGA} />
           <Stack.Screen
             name="Start"

@@ -55,7 +55,7 @@ const SettingLockCode = ({children, setLockShowParent}: any) => {
           <Text
             onPress={showLock}
             style={[styles.lockCodeNumber, styles.noBorder]}>
-            <Icon name="edit" size={30} color="#fff" />
+            <Icon name="edit" size={30} color="#334" />
           </Text>
         </View>
       )}

@@ -7,6 +7,9 @@ const Home = ({navigation}) => {
   const setup = () => {
     navigation.navigate('SetupGA');
   };
+  const setupSassy = () => {
+    navigation.navigate('setupSassy');
+  };
   const view = () => {
     navigation.navigate('UseGA');
   };
@@ -19,7 +22,7 @@ const Home = ({navigation}) => {
         <HeaderText>Help Topics</HeaderText>
         <View style={styles.innerBox}>
           <View style={styles.buttonFormBox}>
-            <Button custom={styles.wide} onPress={setup}>
+            <Button custom={styles.wide} onPress={setupSassy}>
               Setting up Sassy
             </Button>
           </View>

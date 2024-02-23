@@ -3,10 +3,13 @@ import Button from '../../components/Button';
 import {useConfig} from '../../contexts/configContext';
 import HeaderText from '../../components/HeaderText';
 import styles from '../../styles';
-import {View, Text, Image} from 'react-native';
+import {View, Text, Image, Alert} from 'react-native';
+import SystemNavigationBar from 'react-native-system-navigation-bar';
 
-const Home = ({navigation}) => {
-  const {config} = useConfig();
+const Home = ({navigation}: any) => {
+  const {config}: any = useConfig();
+
+  SystemNavigationBar.navigationShow();
 
   const setup = () => {
     navigation.navigate('Setup');
@@ -15,6 +18,10 @@ const Home = ({navigation}) => {
     navigation.navigate('Settings');
   };
   const start = () => {
+    Alert.alert(
+      `Unlock Code: ${config.code}`,
+      `Remember unlock code ${config.code} to return to the home screen`,
+    );
     navigation.navigate('Start');
   };
   const help = () => {
@@ -29,6 +36,9 @@ const Home = ({navigation}) => {
           source={require('../../assets/logo.png')}
         />
         <Text style={styles.subHeader}>Satisfaction Feedback App.</Text>
+        <Text style={styles.subSubHeader}>
+          With Google Analytics Integration.
+        </Text>
         <View style={styles.innerBox}>
           {config.setupComplete ? (
             <>

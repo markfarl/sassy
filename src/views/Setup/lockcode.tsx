@@ -41,9 +41,12 @@ const SetupLockCode = ({navigation}: any) => {
         contentContainerStyle={styles.scrollBoxContainer}>
         <View style={styles.innerBox}>
           <SettingLockCode setLockShowParent={setLockShow}>
-            Set screen unlock PIN for kiosk mode:
+            Set screen unlock Code to return to home:
           </SettingLockCode>
-          <InfoBox heading="Information" content="deiuideudeihu" />
+          <InfoBox
+            heading="Information"
+            content="Back button and navigation will be disabled when feedback screen is started, set unlock code to return to home screen. Default is 0000"
+          />
         </View>
       </ScrollView>
       {!lockShow && (

@@ -69,13 +69,13 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 18,
-    color: '#fff',
+    color: '#334',
     textAlign: 'center',
   },
   textSmall: {
     fontSize: 10,
     height: 30,
-    color: '#fff',
+    color: '#334',
     textAlign: 'center',
   },
   button: {

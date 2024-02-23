@@ -1,6 +1,5 @@
 import {Text, View, Image, TextInput, ScrollView} from 'react-native';
 import Button from '../../../components/Button';
-import InfoBox from '../../components/InfoBox';
 import styles from '../../../styles';
 import HeaderText from '../../../components/HeaderText';
 
@@ -13,16 +12,18 @@ const One = ({navigation}: any) => {
       style={[styles.scrollBox, styles.greyBkgrd]}
       contentContainerStyle={styles.scrollBoxContainer}>
       <View style={styles.innerHelpBox}>
-        <Text style={[styles.testHeaderBlack]}>
-          Setting up Google Analytics.
-        </Text>
+        <Text style={[styles.testHeaderBlack]}>Setting up Sassy.</Text>
         <Text style={styles.textBlack}>
-          To use Sassy, you need a google analytics account, this is free and
-          easy to setup.
+          First thing you need to setup Sassy is a google analytics
+          MeasurementID, if you do not have one please consult the documentation
+          for setting up Google Analytics.
         </Text>
+        <Text style={[styles.testHeaderBlack]}>Select face options.</Text>
         <Text style={styles.textBlack}>
-          To start goto https://analytics.google.com/ And create an account with
-          any name you wish
+          You can select the option of 2 - 5 faces, depending on what the user
+          selects is the name of the event that will appear in the Analytics
+          Events tracking. The full options up to 5 are: Sad Slightly Sad
+          Neutral Slighty Happy Happy
         </Text>
         <Image
           style={styles.helpImage}

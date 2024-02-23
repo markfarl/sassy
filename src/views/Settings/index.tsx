@@ -53,6 +53,7 @@ const Settings = ({navigation}: any) => {
             style={styles.textInput}
           />
         </View>
+        <Text style={[styles.text, styles.marginTop]} />
       </ScrollView>
       <View style={styles.footerTextBox}>
         <View style={styles.buttonFormBoxBottom}>

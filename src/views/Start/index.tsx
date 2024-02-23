@@ -4,13 +4,18 @@ import {FACE_NAME} from '../../constants';
 import {Face} from '../../components/Face';
 import WebGA from '../../components/WebGA';
 import styles from '../../styles';
-import {Text, View, Dimensions, StatusBar, Alert} from 'react-native';
+import {
+  Text,
+  View,
+  Dimensions,
+  StatusBar,
+  Alert,
+  BackHandler,
+} from 'react-native';
 import {activateKeepAwakeAsync, deactivateKeepAwake} from 'expo-keep-awake';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import SmoothPinCodeInput from 'react-native-smooth-pincode-input';
-import RNLockTask from 'react-native-lock-task';
-
-// import RNLockTask from 'react-native-lock-task';
+import SystemNavigationBar from 'react-native-system-navigation-bar';
 
 const getIsPortrait = () => {
   const dim = Dimensions.get('screen');
@@ -26,9 +31,8 @@ const Start = ({navigation}: any) => {
   const enableKeepAwake = async () => {
     await activateKeepAwakeAsync();
   };
-  if (!RNLockTask.isAppInLockTaskMode()) {
-    RNLockTask.startLockTask();
-  }
+
+  SystemNavigationBar.stickyImmersive();
   enableKeepAwake();
 
   const gaCallback = (resp: any) => {
@@ -37,6 +41,7 @@ const Start = ({navigation}: any) => {
 
   const goHome = () => {
     setLockShow(lockShow ? false : true);
+    return true;
   };
 
   const checkCode = (code: string) => {
@@ -44,13 +49,16 @@ const Start = ({navigation}: any) => {
     setLockShow(false);
     if (code == config.code) {
       // code correct Homepage
-      RNLockTask.stopLockTask();
+
       navigation.navigate('Home');
+      SystemNavigationBar.navigationShow();
     } else {
       // alert code inccorect
       Alert.alert('Wrong Unlock Code', 'Please try again to exit');
     }
   };
+
+  const backHandler = BackHandler.addEventListener('hardwareBackPress', goHome);
 
   Dimensions.addEventListener('change', () => {
     setIsPortrait(getIsPortrait);
