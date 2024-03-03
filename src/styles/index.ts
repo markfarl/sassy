@@ -164,6 +164,9 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     backgroundColor: mainBkGrd,
   },
+  helpHeader: {
+    position: 'absolute', top: 20, right: 0, width: 50, height: 50
+  },
   lockCodeNumber: {
     flex: 1,
     borderColor: borderColor,
@@ -197,14 +200,31 @@ const styles = StyleSheet.create({
     backgroundColor: lightBkGrd,
   },
   testHeaderBlack: {
-    fontSize: 26,
+    fontSize: 20,
     color: '#111',
-    marginBottom: 20,
+    marginBottom: 8,
+    marginTop: 12,
+  },  
+  testMainHeaderBlack: {
+    fontSize: 22,
+    color: '#111',
+    height: 70,
+    padding: 20,
+    width: "90%"
   },
   textBlack: {
     fontSize: 14,
     color: '#111',
-    marginBottom: 10,
+    marginBottom: 5,
+  },
+  textRight: {
+    textAlign: 'right'
+  },  
+  textBlue: {
+    color: 'blue'
+  },
+  textBold: {
+    fontWeight: 'bold'
   },
   textButton: {
     fontSize: 22,

@@ -5,40 +5,34 @@ import {View, Text, ScrollView} from 'react-native';
 
 const Home = ({navigation}) => {
   const setup = () => {
-    navigation.navigate('SetupGA');
+    navigation.navigate('SetupGA', { screen: '1' });
   };
   const setupSassy = () => {
-    navigation.navigate('setupSassy');
+    navigation.navigate('SetupGA', { screen: '2' });
   };
-  const view = () => {
-    navigation.navigate('UseGA');
+  const viewAnalytics = () => {
+    navigation.navigate('SetupGA', { screen: '3' });
   };
-
   return (
     <View style={styles.screen}>
       <ScrollView
         style={styles.scrollBox}
         contentContainerStyle={styles.scrollBoxContainer}>
         <HeaderText>Help Topics</HeaderText>
-        <View style={styles.innerBox}>
-          <View style={styles.buttonFormBox}>
-            <Button custom={styles.wide} onPress={setupSassy}>
-              Setting up Sassy
-            </Button>
-          </View>
+        <View style={styles.innerBox}> 
           <View style={styles.buttonFormBox}>
             <Button custom={styles.wide} onPress={setup}>
               Setting up Google Analytics
             </Button>
           </View>
           <View style={styles.buttonFormBox}>
-            <Button custom={styles.wide} onPress={view}>
-              How to view Analytics
+            <Button custom={styles.wide} onPress={setupSassy}>
+              Setting up Sassy
             </Button>
           </View>
           <View style={styles.buttonFormBox}>
-            <Button custom={styles.wide} onPress={view}>
-              FAQ
+            <Button custom={styles.wide} onPress={viewAnalytics}>
+              How to view Analytics
             </Button>
           </View>
         </View>

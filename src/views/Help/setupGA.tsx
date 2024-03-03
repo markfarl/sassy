@@ -1,9 +1,8 @@
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
-import {One, Two, Three, Four, Five} from './SetupGAPage';
-import {Text, View, Image, ScrollView} from 'react-native';
-import Button from '../../components/Button';
+import {One, Two, Three} from './SetupGAPage';
+import { View } from 'react-native';
 import styles from '../../styles';
-import HeaderText from '../../components/HeaderText';
+import Icon from 'react-native-vector-icons/AntDesign';
 
 const Tab = createMaterialBottomTabNavigator();
 const SetupGA = ({navigation}: any) => {
@@ -13,13 +12,9 @@ const SetupGA = ({navigation}: any) => {
         <Tab.Screen name="1" component={One} />
         <Tab.Screen name="2" component={Two} />
         <Tab.Screen name="3" component={Three} />
-        <Tab.Screen name="4" component={Four} />
-        <Tab.Screen name="5" component={Five} />
       </Tab.Navigator>
-      <View style={[styles.footerTextBox, styles.greyBkgrd]}>
-        <View style={styles.buttonFormBoxBottom}>
-          <Button onPress={navigation.goBack}>Close</Button>
-        </View>
+      <View style={styles.helpHeader}>
+          <Icon onPress={navigation.goBack} name="closecircle" size={30} color="#333" />
       </View>
     </View>
   );
