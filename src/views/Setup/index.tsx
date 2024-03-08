@@ -5,7 +5,7 @@ import HeaderText from '../../components/HeaderText';
 import InfoBox from '../../components/InfoBox';
 import SettingGAID from '../../components/SettingGAID';
 import styles from '../../styles';
-import {View, ScrollView} from 'react-native';
+import {View, ScrollView, Text} from 'react-native';
 
 const Setup = ({navigation}: any) => {
   const {config}: any = useConfig();
@@ -17,9 +17,12 @@ const Setup = ({navigation}: any) => {
     // Move onto the next screen
     navigation.navigate('SetupFaces');
   };
+  const helpGa = () => {
+    navigation.navigate('SetupGA', { screen: '1' });
+  };
   const info = `You need a Google Analytics Measurment ID to view the captured interactions and data with your App.
 It is free to setup a Google Analytics 4 Account and start collecting Data.
-For a tutorial on how to setup GA4 account click here.`;
+For a tutorial on how to setup GA4 account click here. `;
 
   return (
     <View style={styles.screen}>
@@ -28,8 +31,8 @@ For a tutorial on how to setup GA4 account click here.`;
         style={styles.scrollBox}
         contentContainerStyle={styles.scrollBoxContainer}>
         <View style={styles.innerBox}>
-          <SettingGAID>Enter your Google Analytics MeasurmentId:</SettingGAID>
-          <InfoBox heading="Information" content={info} />
+          <SettingGAID>Enter your Google Analytics Measurment ID:</SettingGAID>
+          <InfoBox onPress={helpGa} heading="Information" content={info} />
         </View>
       </ScrollView>
       <View style={styles.footerTextBox}>

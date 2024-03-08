@@ -7,7 +7,7 @@ import SettingGAID from '../../components/SettingGAID';
 import SettingFaces from '../../components/SettingFaces';
 import {SettingLockCode} from '../../components/SettingLockCode';
 import styles from '../../styles';
-import {Text, View, TextInput, ScrollView} from 'react-native';
+import {Text, View, TextInput, ScrollView, Switch} from 'react-native';
 
 const Settings = ({navigation}: any) => {
   const {config, setConfig}: any = useConfig();
@@ -20,6 +20,13 @@ const Settings = ({navigation}: any) => {
     navigation.navigate('Home');
   };
 
+  const reverseChange = (x: any) => {
+    setConfig({
+      ...config,
+      direction: x,
+    })
+  }
+
   return (
     <View style={styles.screen}>
       <HeaderText style={styles.headerTextBox}>Settings</HeaderText>
@@ -27,20 +34,29 @@ const Settings = ({navigation}: any) => {
         style={styles.scrollBox}
         contentContainerStyle={styles.scrollBoxContainer}>
         <View style={styles.innerBox}>
-          <SettingGAID>Google Analytics MeasurmentId:</SettingGAID>
+          <SettingGAID>Google Analytics Measurment ID:</SettingGAID>
           <SettingFaces>Feedback faces: ( 2-5 )</SettingFaces>
           <View style={styles.infoBox}>
             <Text style={styles.text}>Preview.</Text>
             <View style={styles.playFacesContainerPreview}>
               {[...Array(config.faces)].map((i, y) => {
-                return <FacePreview key={y} index={y} faces={config.faces} />;
+                return <FacePreview key={y} index={y} faces={config.faces} direction={config.direction} />;
               })}
             </View>
           </View>
+          <Text style={[styles.text, styles.marginTop]}>Reverse face direction:  
+          
+          </Text>
+          <Switch
+            style={styles.switchEnd}
+            onValueChange={reverseChange}
+            value={config.direction}
+          />
           <SettingLockCode setLockShowParent={setShowNav}>
             Set Lock Code:
           </SettingLockCode>
-          <Text style={[styles.text, styles.marginTop]}>Feedback Text:</Text>
+          <Text style={[styles.text, styles.marginTop]}>Feedback Text:
+          </Text>
           <TextInput
             name="gaId"
             value={config.text}

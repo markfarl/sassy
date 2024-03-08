@@ -9,7 +9,10 @@ import {
 } from 'react-native';
 import {IMAGE_FACE, FACE_NAME} from '../constants';
 
-const FacePreview = ({index, faces}: any) => {
+const FacePreview = ({index, faces, direction}: any) => {
+  if(direction){
+    index = -(index - (faces - 1));
+  }
   const adjusted = FACE_NAME[faces - 2][index];
   const faceIndex = faces - 2;
   return (
@@ -25,7 +28,10 @@ const FacePreview = ({index, faces}: any) => {
   );
 };
 
-const Face = ({custom, onPress, faces, index}: any) => {
+const Face = ({custom, onPress, faces, index, direction}: any) => {
+  if(direction){
+    index = -(index - (faces - 1));
+  }
   const [isPress, setIsPress] = useState(false);
   const faceIndex = faces - 2;
 

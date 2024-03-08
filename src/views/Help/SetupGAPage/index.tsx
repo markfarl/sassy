@@ -29,7 +29,7 @@ const One = ({navigation}: any) => {
           easy to setup.
         </Text>
         <Text style={styles.textBlack}>
-          To start go to <Text onPress={gaLink} style={[styles.textBlue, styles.textBold]}> https://analytics.google.com/ </Text> nd create an account with
+          To start go to <Text onPress={gaLink} style={[styles.textBlue, styles.textBold]}> https://analytics.google.com/ </Text> and create an account with
           any name you wish.
         </Text>
         <Image

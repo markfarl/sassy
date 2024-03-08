@@ -32,6 +32,10 @@ const Start = ({navigation}: any) => {
     await activateKeepAwakeAsync();
   };
 
+  const disableKeepAwake = async () => {
+    await deactivateKeepAwake();
+  };
+
   SystemNavigationBar.stickyImmersive();
   enableKeepAwake();
 
@@ -49,9 +53,9 @@ const Start = ({navigation}: any) => {
     setLockShow(false);
     if (code == config.code) {
       // code correct Homepage
-
       navigation.navigate('Home');
       SystemNavigationBar.navigationShow();
+      disableKeepAwake();
     } else {
       // alert code inccorect
       Alert.alert('Wrong Unlock Code', 'Please try again to exit');
@@ -112,6 +116,7 @@ const Start = ({navigation}: any) => {
                 key={y}
                 index={y}
                 faces={config.faces}
+                direction={config.direction}
                 onPress={() => sendToGa(y)}
               />
             );

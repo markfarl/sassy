@@ -75,6 +75,10 @@ const styles = StyleSheet.create({
   scrollBoxContainer: {
     alignItems: 'center',
   },
+  switchEnd: {
+    alignItems: 'flex-end',
+    marginTop: -20,
+  },
   innerBox: {
     width: '90%',
   },
