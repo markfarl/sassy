@@ -28,6 +28,7 @@ build/
 .idea
 .gradle
 local.properties
+gradle.properties
 *.iml
 *.hprof
 .cxx/
@@ -69,5 +70,5 @@ yarn-error.log
 .expo
 dist/
 web-build/
-
+# Gradle passwords
 android/gradle.properties
